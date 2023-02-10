@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.RoomPage"
+             Title="RoomPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--吸顶标题-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="White"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+            <Label Text="在线自习室" VerticalOptions="Center" HorizontalOptions="Center"
+                   FontAttributes="Bold" FontSize="Medium" BackgroundColor="White"/>
+            <!--
+            <ImageButton Source="more.svg" WidthRequest="50" HeightRequest="25"
+                         HorizontalOptions="End" VerticalOptions="Center" 
+                         x:Name="moreButton" 
+                         Pressed="onMoreButtonPressed" Released="onMoreButtonReleased" Clicked="onMoreButtonClicked"/>
+            -->
+        </Grid>
+        <!--卡片组-->
+        <BoxView Grid.Row="1" Color="#E1E1E1" HeightRequest="700"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="520"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" Margin="4" BorderColor="#E1E1E1" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Good Good Learning Day Day Up" FontAttributes="Bold" FontSize="16"/>
+                        <Label Grid.Row="1" Text="Study love me, so do I" HorizontalOptions="Start" Margin="2,6"/>
+                    </Grid>
+                    <VerticalStackLayout Grid.Column="1">
+                        <HorizontalStackLayout>
+                            <Label VerticalOptions="End"
+                                   Text="2" FontAttributes="Bold"
+                                   FontSize="28" TextColor="#3E8EED" 
+                                   Margin="4,0"/>
+                            <Label VerticalOptions="End"
+                                   Text="人正在学习" FontAttributes="Bold" HorizontalOptions="End" 
+                                   FontSize= "12" TextColor="#3E8EED"
+                                   Margin="0,8"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="End">
+                            <Label VerticalOptions="End"
+                                   Text="当前排名" FontAttributes="Bold" 
+                                   FontSize="12" TextColor="#3E8EED"
+                                   Margin="0,8"/>
+                            <Label VerticalOptions="End"
+                                   Text="1" FontAttributes="Bold"
+                                   FontSize="28" TextColor="#3E8EED" 
+                                   Margin="4,0"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="1" Margin="4,0" BorderColor="#E1E1E1" CornerRadius="8" Padding="8">
+                <ListView ItemsSource="{Binding Memberlist}" HasUnevenRows="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Rank}"
+                                           VerticalOptions="Center" Margin="8, 0, 8, 0"
+                                           FontSize="20" FontAttributes="Bold"/>
+                                    <Frame Grid.Column="1"
+                                           Margin="10"
+                                           BorderColor="Black"
+                                           CornerRadius="40"
+                                           HeightRequest="40"
+                                           WidthRequest="40"
+                                           IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center">
+                                        <Image Source="{Binding ImageUrl}"
+                                               Aspect="AspectFill"
+                                               Margin="-10"
+                                               HeightRequest="40"
+                                               WidthRequest="40" />
+                                    </Frame>
+                                    <Grid Grid.Column="2" HeightRequest="80" Margin="4,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label VerticalOptions="Center" Margin="0,10,0,0"
+                                            Text="{Binding Name}"
+                                            FontAttributes="Bold"/>
+                                        <Label Grid.Row="1"
+                                            Text="{Binding Description}"
+                                               HeightRequest="30"/>
+                                    </Grid>
+                                    <HorizontalStackLayout Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center">
+                                        <Label Text="{Binding Time}"
+                                               FontSize="28"
+                                               FontAttributes="Bold" TextColor="#3E8EED"/>
+                                        <Label Text="分钟" Margin="4,14,8,0"
+                                               FontSize="12"
+                                               FontAttributes="Bold" TextColor="#3E8EED"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

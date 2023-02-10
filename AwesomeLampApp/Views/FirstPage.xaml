@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.FirstPage"
+             Title="FirstPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--第一行-->
+        <HorizontalStackLayout HeightRequest="30">
+            <Label Text="&#xe8ae;" FontFamily="iconfont.ttf#"
+               VerticalOptions="Center" FontSize="16"
+               HorizontalOptions="Start" />
+            <Label Text="广东省广州市番禺区华南理工大学国际校区" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+        <Button Text="&#xe712;" FontFamily="iconfont.ttf#" FontSize="20"
+                VerticalOptions="Center" HorizontalOptions="End" WidthRequest="50"
+                Background="Transparent" TextColor="Black"/>
+        
+        <!--第二行-->
+        <Frame CornerRadius="16" Grid.Row="1" BackgroundColor="Transparent" Padding="8,0" Margin="10,12">
+            <Entry x:Name="SearchEntry" 
+                   Placeholder="&#xe752;输入商品名称" FontFamily="iconfont.ttf#"
+                   HorizontalTextAlignment="Center" VerticalOptions="Center"
+                   ClearButtonVisibility="WhileEditing"
+                   MaxLength="64" TextChanged="OnSearchEntryTextChanged" Completed="OnSearchEntryCompleted"/>
+        </Frame>
+        
+        <!--第三行-->
+        <CarouselView Grid.Row="2" HeightRequest="128" ItemsSource="{Binding Carouses}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Frame CornerRadius="8" Margin="10,0" Padding="0" HasShadow="True">
+                            <Image Source="{Binding ImageName}" Aspect="AspectFill"/>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        
+        <!--第四行-->
+        <CollectionView Grid.Row="3" ItemsSource="{Binding Category}"
+                        ItemsLayout="VerticalGrid,5">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ImageButton Source="{Binding ImageName}"
+                                     HeightRequest="60" WidthRequest="60" CornerRadius="60"
+                                     HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Header}" Grid.Row="1"
+                               FontSize="10" VerticalOptions="Center" HorizontalOptions="Center" 
+                               FontAttributes="Bold"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

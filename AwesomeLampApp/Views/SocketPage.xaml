@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.SocketPage"
+             Title="SocketPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Test For Socket!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <Label Text="IPv4地址：" HorizontalOptions="Center" Margin="4,10"/>
+            <Frame CornerRadius="8" HeightRequest="20"
+                   HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry x:Name="IPEntry"
+                       Text="10.17.14.42"
+                       HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+            </Frame>
+            <Label Text="端口号：" HorizontalOptions="Center" Margin="4,10"/>
+            <Frame CornerRadius="8" HeightRequest="20"
+                   HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry x:Name="PortEntry"
+                   Text="45000"
+                   HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+            </Frame>
+        </HorizontalStackLayout>
+        <Button x:Name="ServerCreateButton"
+                Text="连接台灯"
+                Clicked="OnServerCreateButtonClicked"/>
+        <Label x:Name="MsgBox" HeightRequest="300"
+               Text="MessageBox"/>
+        <Image x:Name="pictureBox"
+               HeightRequest="300" BackgroundColor="Thistle"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.HomePage"
+             Title="HomePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--吸顶标题-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="White"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+            <Label Text="我的智能台灯" VerticalOptions="Center" HorizontalOptions="Center"
+                   FontAttributes="Bold" FontSize="Medium" BackgroundColor="White"/>
+            <ImageButton Source="more.svg" WidthRequest="50" HeightRequest="25"
+                         HorizontalOptions="End" VerticalOptions="Center" 
+                         x:Name="moreButton" 
+                         Pressed="onMoreButtonPressed" Released="onMoreButtonReleased" Clicked="onMoreButtonClicked"/>
+        </Grid>
+        
+        <!--台灯连接状态图片-->
+        <!--控制卡片组-->
+        <BoxView Grid.Row="1" Color="#E1E1E1" HeightRequest="700"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="lamp.png"/>
+            <Grid Grid.Row="1" Padding="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Margin="4" BorderColor="#E1E1E1"
+                       CornerRadius="8">
+                    <Grid>
+                        <Label Text="连接状态" FontAttributes="Bold"/>
+                        <Label Text="已连接" HorizontalOptions="End"
+                               TextColor="#3E8EED"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" Margin="4" BorderColor="#E1E1E1"
+                       CornerRadius="8">
+                    <Grid>
+                        <Label Text="台灯开关" FontAttributes="Bold"
+                               VerticalOptions="Center"/>
+                        <ImageButton Source="kaiguan.svg" HorizontalOptions="End"
+                                     HeightRequest="30" WidthRequest="30"
+                                     Clicked="onLightSwitchButtonClicked"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="2" BorderColor="#E1E1E1" Margin="4"
+                       CornerRadius="8"
+                       Padding="8">
+                    <StackLayout>
+                        <Label Text="工作模式"
+                               FontSize="14"
+                               FontAttributes="Bold" />
+                        <BoxView Color="Gray" Margin="0,8"
+                                 HeightRequest="2"
+                                 HorizontalOptions="Fill" />
+                        <Grid Margin="8,16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <VerticalStackLayout Grid.Column="0">
+                                <ImageButton Source="reading.svg" 
+                                             HeightRequest="40" WidthRequest="40"
+                                             x:Name="readingButton"
+                                             Pressed="onReadingButtonPressed" Released="onReadingButtonReleased"
+                                             Clicked="onReadingButtonClicked"/>
+                                <Label x:Name="readingLabel" Text="阅读" HorizontalOptions="Center"
+                                       FontAttributes="Bold" TextColor="#3E8EED"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1">
+                                <ImageButton Source="desktop1.svg" 
+                                             HeightRequest="40" WidthRequest="40"
+                                             x:Name="desktopButton"
+                                             Pressed="onDesktopButtonPressed" Released="onDesktopButtonReleased"
+                                             Clicked="onDesktopButtonClicked"/>
+                                <Label x:Name="desktopLabel" Text="办公" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="2">
+                                <ImageButton Source="nightlight.svg" 
+                                             HeightRequest="40" WidthRequest="40"
+                                             x:Name="nightlightButton"
+                                             Pressed="onNightlightButtonPressed" Released="onNightlightButtonReleased"
+                                             Clicked="onNightlightButtonClicked"/>
+                                <Label x:Name="nightlightLabel" Text="夜灯" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="3">
+                                <ImageButton Source="fenweideng.svg" 
+                                             HeightRequest="40" WidthRequest="40"
+                                             x:Name="fenweidengButton"
+                                             Pressed="onFenweidengButtonPressed" Released="onFenweidengButtonReleased"
+                                             Clicked="onFenweidengButtonClicked"/>
+                                <Label x:Name="fenweidengLabel" Text="氛围灯" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Label Grid.Row="3" x:Name="MsgBox" Text=""/>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
