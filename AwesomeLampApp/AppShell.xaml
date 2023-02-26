@@ -8,6 +8,10 @@
     android:TabbedPage.ToolbarPlacement="Bottom">
     
     <v:StatisticPage Title="统计" IconImageSource="Resources/Images/fenlei.png"/>
-    <v:HomePage Title="首页" IconImageSource="Resources/Images/shouye.png"/>
+    <NavigationPage Title="首页" IconImageSource="Resources/Images/shouye.png">
+        <x:Arguments>
+            <v:HomePage/>
+        </x:Arguments>
+    </NavigationPage>
     <v:RoomPage Title="自习室" IconImageSource="Resources/Images/gerenzhongxin.png"/>
 </TabbedPage>

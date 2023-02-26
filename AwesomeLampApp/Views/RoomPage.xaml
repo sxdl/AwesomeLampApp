@@ -26,13 +26,13 @@
             -->
         </Grid>
         <!--卡片组-->
-        <BoxView Grid.Row="1" Color="#E1E1E1" HeightRequest="700"/>
+        <BoxView Grid.Row="1" Color="#F7F7F7" HeightRequest="700"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="520"/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="0" Margin="4" BorderColor="#E1E1E1" CornerRadius="8">
+            <Frame Grid.Row="0" Margin="4" BorderColor="#F7F7F7" CornerRadius="8">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="7*"/>
@@ -70,7 +70,7 @@
                     </VerticalStackLayout>
                 </Grid>
             </Frame>
-            <Frame Grid.Row="1" Margin="4,0" BorderColor="#E1E1E1" CornerRadius="8" Padding="8">
+            <Frame Grid.Row="1" Margin="4,0" BorderColor="#F7F7F7" CornerRadius="8" Padding="8">
                 <ListView ItemsSource="{Binding Memberlist}" HasUnevenRows="True" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>

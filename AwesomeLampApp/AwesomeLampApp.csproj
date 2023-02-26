@@ -70,7 +70,37 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\jiantou.svg" />
+	  <None Remove="Resources\Images\lunkuojiantou.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="InTheHand.Net.Bluetooth" Version="4.0.33.1" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\EmotionListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\FatigueListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MorePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MoreSettingListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SceneListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TomatoListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VoiceListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

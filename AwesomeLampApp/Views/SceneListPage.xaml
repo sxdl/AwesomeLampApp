@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.SceneListPage"
+             Title="SceneListPage"
+             NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="White"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+            <Label Text="智能场景切换" VerticalOptions="Center" HorizontalOptions="Center"
+                   FontAttributes="Bold" FontSize="Medium" BackgroundColor="White"/>
+            <ImageButton Source="jiantou.svg" WidthRequest="50" HeightRequest="25"
+                         HorizontalOptions="Start" VerticalOptions="Center" 
+                         x:Name="moreButton" 
+                         Clicked="onBackButtonClicked"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="#F7F7F7" HeightRequest="700"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Frame HeightRequest="60" CornerRadius="16" Padding="4" Margin="4,4,4,0" BorderColor="#F7F7F7">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Margin="10,6" Text="智能场景切换开关"
+                               FontAttributes="Bold"/>
+                        <Label Text="识别不同使用场景，自动切换照明模式"
+                               HorizontalOptions="Start" VerticalOptions="End" Margin="10,4"
+                               FontSize="12"/>
+                        <Switch IsToggled="False" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" HeightRequest="60" CornerRadius="16" Padding="4" Margin="4,4,4,0" BorderColor="#F7F7F7">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Margin="10,6" Text="自定义灯光色温"
+                               FontAttributes="Bold"/>
+                        <Label Text="根据个人喜好自定义不同使用场景下的灯光照明模式"
+                               HorizontalOptions="Start" VerticalOptions="End" Margin="10,28,0,0"
+                               FontSize="12"/>
+                        
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

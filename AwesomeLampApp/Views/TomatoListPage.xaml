@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.TomatoListPage"
+             Title="TomatoListPage"
+             NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="White"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+            <Label Text="番茄灯" VerticalOptions="Center" HorizontalOptions="Center"
+                   FontAttributes="Bold" FontSize="Medium" BackgroundColor="White"/>
+            <ImageButton Source="jiantou.svg" WidthRequest="50" HeightRequest="25"
+                         HorizontalOptions="Start" VerticalOptions="Center" 
+                         x:Name="moreButton" 
+                         Clicked="onBackButtonClicked"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="#F7F7F7" HeightRequest="700"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Frame HeightRequest="60" CornerRadius="16" Padding="4" Margin="4,4,4,0" BorderColor="#F7F7F7">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Margin="10,6" Text="开始番茄钟计时"
+                               FontAttributes="Bold"/>
+                        <Label Text="倒计时结束后台灯会连续闪烁三次提醒"
+                               HorizontalOptions="Start" VerticalOptions="End" Margin="10,4"
+                               FontSize="12"/>
+                        <Button x:Name="remainTimeDisplay" HorizontalOptions="End" VerticalOptions="Center" Text="开始"
+                                Margin="6" Clicked="onTimerClicked"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" HeightRequest="120" CornerRadius="16" Padding="4" Margin="4,4,4,0" BorderColor="#F7F7F7">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label HorizontalOptions="Start" VerticalOptions="Center" Margin="10,4" Text="设置番茄钟时长"
+                               FontAttributes="Bold"/>
+                        <BoxView Grid.Row="1" Color="#C1C1C1" Margin="4,8"
+                                 HeightRequest="2"
+                                 HorizontalOptions="Fill" />
+                        <Grid Grid.Row="2" RowDefinitions="auto">
+                            <HorizontalStackLayout HorizontalOptions="Start" Margin="24,8,0,8">
+                                <Label Text="当前时长: " VerticalOptions="Center"/>
+                                <Label x:Name="displayLabel" Text="25" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                            <Label Text="默认时长: 25" HorizontalOptions="End" VerticalOptions="Center"
+                                   Margin="4,8,24,8"/>
+                        </Grid>
+                        <Slider Grid.Row="3" Minimum="10" Maximum="90" Value="25"
+                                ValueChanged="onSliderValueChanged"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeLampApp.Views.MorePage"
+             Title="MorePage"
+             NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="White"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+            <Label Text="自定义选项" VerticalOptions="Center" HorizontalOptions="Center"
+                   FontAttributes="Bold" FontSize="Medium" BackgroundColor="White"/>
+            <ImageButton Source="jiantou.svg" WidthRequest="50" HeightRequest="25"
+                         HorizontalOptions="Start" VerticalOptions="Center" 
+                         x:Name="moreButton" 
+                         Clicked="onBackButtonClicked"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <BoxView Color="#F7F7F7" HeightRequest="700"/>
+            <Frame Margin="8" BorderColor="#F7F7F7" CornerRadius="12" Padding="8" HeightRequest="380" VerticalOptions="Start">
+                <ListView ItemsSource="{Binding Optionlist}" HasUnevenRows="True" SelectionMode="None"
+                          ItemTapped="onItemtapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid HeightRequest="60" Margin="4,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label VerticalOptions="Center" Margin="10,10,0,0"
+                                            Text="{Binding Title}"
+                                            FontAttributes="Bold"/>
+                                        <Label Grid.Row="1" Margin="10,0"
+                                            Text="{Binding Description}"
+                                               HeightRequest="30"/>
+                                    </Grid>
+                                    <Image Source="jiantou.svg" RotationY="180"
+                                             HorizontalOptions="End" VerticalOptions="Center"
+                                             HeightRequest="12" WidthRequest="30"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

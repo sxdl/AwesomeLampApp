@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AwesomeLampApp.Views.HomePage"
-             Title="HomePage">
+             Title="HomePage"
+             NavigationPage.HasNavigationBar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -27,7 +28,7 @@
         
         <!--台灯连接状态图片-->
         <!--控制卡片组-->
-        <BoxView Grid.Row="1" Color="#E1E1E1" HeightRequest="700"/>
+        <BoxView Grid.Row="1" Color="#F7F7F7" HeightRequest="700"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"/>
@@ -41,15 +42,17 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Frame Grid.Row="0" Margin="4" BorderColor="#E1E1E1"
+                <Frame Grid.Row="0" Margin="4" BorderColor="#F7F7F7"
                        CornerRadius="8">
                     <Grid>
                         <Label Text="连接状态" FontAttributes="Bold"/>
-                        <Label Text="已连接" HorizontalOptions="End"
-                               TextColor="#3E8EED"/>
+                        <Button x:Name="linkState" 
+                               Text="未连接" HorizontalOptions="End"
+                               TextColor="Gray" BackgroundColor="#F7F7F7"
+                               Clicked="connectBlt"/>
                     </Grid>
                 </Frame>
-                <Frame Grid.Row="1" Margin="4" BorderColor="#E1E1E1"
+                <Frame Grid.Row="1" Margin="4" BorderColor="#F7F7F7"
                        CornerRadius="8">
                     <Grid>
                         <Label Text="台灯开关" FontAttributes="Bold"
@@ -59,7 +62,7 @@
                                      Clicked="onLightSwitchButtonClicked"/>
                     </Grid>
                 </Frame>
-                <Frame Grid.Row="2" BorderColor="#E1E1E1" Margin="4"
+                <Frame Grid.Row="2" BorderColor="#F7F7F7" Margin="4"
                        CornerRadius="8"
                        Padding="8">
                     <StackLayout>
