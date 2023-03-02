@@ -57,9 +57,10 @@
                     <Grid>
                         <Label Text="台灯开关" FontAttributes="Bold"
                                VerticalOptions="Center"/>
-                        <ImageButton Source="kaiguan.svg" HorizontalOptions="End"
+                        <ImageButton x:Name="switchButton" Source="kaiguan.svg" HorizontalOptions="End"
                                      HeightRequest="30" WidthRequest="30"
-                                     Clicked="onLightSwitchButtonClicked"/>
+                                     Clicked="onLightSwitchButtonClicked"
+                                     IsEnabled="False"/>
                     </Grid>
                 </Frame>
                 <Frame Grid.Row="2" BorderColor="#F7F7F7" Margin="4"
@@ -84,7 +85,8 @@
                                              HeightRequest="40" WidthRequest="40"
                                              x:Name="readingButton"
                                              Pressed="onReadingButtonPressed" Released="onReadingButtonReleased"
-                                             Clicked="onReadingButtonClicked"/>
+                                             Clicked="onReadingButtonClicked"
+                                             IsEnabled="False"/>
                                 <Label x:Name="readingLabel" Text="阅读" HorizontalOptions="Center"
                                        FontAttributes="Bold" TextColor="#3E8EED"/>
                             </VerticalStackLayout>
@@ -93,7 +95,8 @@
                                              HeightRequest="40" WidthRequest="40"
                                              x:Name="desktopButton"
                                              Pressed="onDesktopButtonPressed" Released="onDesktopButtonReleased"
-                                             Clicked="onDesktopButtonClicked"/>
+                                             Clicked="onDesktopButtonClicked"
+                                             IsEnabled="False"/>
                                 <Label x:Name="desktopLabel" Text="办公" HorizontalOptions="Center"/>
                             </VerticalStackLayout>
                             <VerticalStackLayout Grid.Column="2">
@@ -101,7 +104,8 @@
                                              HeightRequest="40" WidthRequest="40"
                                              x:Name="nightlightButton"
                                              Pressed="onNightlightButtonPressed" Released="onNightlightButtonReleased"
-                                             Clicked="onNightlightButtonClicked"/>
+                                             Clicked="onNightlightButtonClicked"
+                                             IsEnabled="False"/>
                                 <Label x:Name="nightlightLabel" Text="夜灯" HorizontalOptions="Center"/>
                             </VerticalStackLayout>
                             <VerticalStackLayout Grid.Column="3">
@@ -109,7 +113,8 @@
                                              HeightRequest="40" WidthRequest="40"
                                              x:Name="fenweidengButton"
                                              Pressed="onFenweidengButtonPressed" Released="onFenweidengButtonReleased"
-                                             Clicked="onFenweidengButtonClicked"/>
+                                             Clicked="onFenweidengButtonClicked"
+                                             IsEnabled="False"/>
                                 <Label x:Name="fenweidengLabel" Text="氛围灯" HorizontalOptions="Center"/>
                             </VerticalStackLayout>
                         </Grid>

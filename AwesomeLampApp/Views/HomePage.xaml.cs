@@ -94,6 +94,15 @@ public partial class HomePage : ContentPage
                 }
         }
     }
+
+    private void enableButton()
+    {
+        switchButton.IsEnabled = true;
+        readingButton.IsEnabled = true;
+        desktopButton.IsEnabled = true;
+        nightlightButton.IsEnabled = true;
+        fenweidengButton.IsEnabled = true;
+    }
     
     private void connectBlt(object sender, EventArgs e)
     {
@@ -105,6 +114,7 @@ public partial class HomePage : ContentPage
             MsgBox.Text += "connected";
             linkState.Text = "ÒÑÁ¬½Ó";
             linkState.IsEnabled = false;
+            enableButton();
             linkState.BackgroundColor = Colors.White;
             linkState.TextColor = Color.FromArgb("3E8EED");
             NetworkStream stream = btc.GetStream();
