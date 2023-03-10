@@ -72,6 +72,10 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\jiantou.svg" />
 	  <None Remove="Resources\Images\lunkuojiantou.svg" />
+	  <None Remove="Resources\Images\sta1.png" />
+	  <None Remove="Resources\Images\sta2.png" />
+	  <None Remove="Resources\Images\sta3.png" />
+	  <None Remove="Resources\Images\sta4.png" />
 	</ItemGroup>
 
 	<ItemGroup>
